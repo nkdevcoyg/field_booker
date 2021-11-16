@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  # has_many :users, dependent: :destroy
+
   has_many :payments
   has_many :bookings
 
