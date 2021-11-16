@@ -14,6 +14,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       t.datetime :reset_password_sent_at
       ## Rememberable
       t.datetime :remember_created_at
+      t.integer :payment_id
       t.integer :booking_id
 
       # user = User.create!(name: "test", email: "test@example.com", password: "morethan6", password_confirmation: "morethan6")

@@ -4,6 +4,7 @@ class CreatePayments < ActiveRecord::Migration[6.1]
       t.date :date
       t.integer :price
       t.integer :user_id
+      t.integer :booking_id
 
       t.timestamps
     end
