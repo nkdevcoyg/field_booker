@@ -1,8 +1,8 @@
 class Booking < ApplicationRecord
-  belongs_to :field
-  belongs_to :schedule
-  belongs_to :user
-  has_many :payments
+  belongs_to :fields
+  belongs_to :schedules
+  belongs_to :users
+  has_one :payment
 
-  validates :title, :price, :start, :field_id, presence: true
+  # validates :title, :price, :start, :field_id, presence: true
 end

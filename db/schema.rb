@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2021_11_11_164825) do
     t.integer "price"
     t.datetime "start"
     t.integer "field_id"
+    t.integer "user_id"
+    t.integer "schedule_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -28,7 +30,6 @@ ActiveRecord::Schema.define(version: 2021_11_11_164825) do
     t.string "title"
     t.string "location"
     t.integer "price"
-    t.integer "duration"
     t.string "size"
     t.string "field_coverage"
     t.datetime "created_at", precision: 6, null: false
@@ -39,6 +40,7 @@ ActiveRecord::Schema.define(version: 2021_11_11_164825) do
     t.date "date"
     t.integer "price"
     t.integer "user_id"
+    t.integer "booking_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -56,13 +58,11 @@ ActiveRecord::Schema.define(version: 2021_11_11_164825) do
     t.string "email", default: "", null: false
     t.string "first_name"
     t.string "last_name"
-    t.integer "user_id"
     t.string "phone_number"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer "booking_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "admin", default: false
