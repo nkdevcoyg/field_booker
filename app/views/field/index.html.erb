@@ -1,0 +1,12 @@
+<h1>Field</h1>
+<ul>
+  <% @fields.each do |field| %>
+    <li>
+      <%= link_to field.title, field %>
+    </li>
+  <% end %>
+</ul>
+
+<button class='btn btn-outline-dark'>
+  <%= link_to "New Field", new_field_path %>
+</button>

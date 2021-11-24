@@ -1,0 +1,45 @@
+<%= form_with model: :field do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title, {:class => 'form-control'} %>
+    <% field.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :location %><br>
+    <%= form.text_area(:location, {:class => 'form-control' }) %><br>
+    <% field.errors.full_messages_for(:location).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :price %><br>
+    <%= form.text_field :price, {:class => 'form-control'} %><br>
+    <% field.errors.full_messages_for(:price).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :size %><br>
+    <%= form.text_area :size, {:class => 'form-control'} %><br>
+    <% field.errors.full_messages_for(:size).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :field_coverage %><br>
+    <%= form.text_area :field_coverage , {:class => 'form-control'}%><br>
+    <% field.errors.full_messages_for(:field_coverage).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit {:class => 'btn btn-primary'} %>
+  </div>
+<% end %>
+
