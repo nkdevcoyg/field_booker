@@ -1,6 +1,19 @@
 Rails.application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+  root to: 'pages#home'
+  get 'pages/index'
+  namespace :admin do
+    resources :fields
+  end
+
+  get "field/index" => "fields#index"
+  resources :fields, only: [:index, :show]
   devise_for :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  get "booking/index" => "bookings#index"
+  resources :bookings
 end
+
+
+# resources :fields, :only => [:index, :show]
+# resources :bookings, :only => [:index, :show]
+# resources :users, :only =>[:create, :show]

@@ -1,0 +1,66 @@
+<% if user_signed_in? %>
+ <p id="notice"><%= notice %></p>
+
+<h1> All bookings</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Field</th>
+    <th>Starts</th>
+    <th>Ends</th>
+    <th>User</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+<!--  <tbody>-->
+    <%#=@bookings.each do |booking| %>
+<!--     <tr>-->
+<!--       <td><%#= booking.field.title %></td>-->
+<!--       <td><%#= booking.starts %></td>-->
+<!--       <td><%#= booking.ends %></td>-->
+<!--       <td><%#= booking.user.email %></td>-->
+<!--       <td><%#= link_to 'Show', booking %></td>-->
+<!--       <td><%#= link_to 'Edit', edit_booking_path(booking) %></td>-->
+<!--       <td><%#= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' }%></td>-->
+<!--     </tr>-->
+    <%# end %>
+  </tbody>
+</table>
+
+  <br>
+    <h1>Today's Bookings</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Fied</th>
+        <th>Starts</th>
+        <th>Ends</th>
+        <th>User</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+<!--    <tbody>-->
+      <%# @todays.each do |book| %>
+<!--        <tr>-->
+<!--          <td><%#= book.field.title %></td>-->
+<!--          <td><%#= book.field.starts %></td>-->
+<!--          <td><%#= book.field.ends %></td>-->
+<!--          <td><%#= book.user.email%></td>-->
+<!--          <td><%#= link_to 'Show', booking %></td>-->
+<!--          <td><%#= link_to 'Edit', edit_booking_path(booking) %></td>-->
+<!--          <td><%#= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?'} %></td>-->
+<!--        </tr>-->
+      <%# end %>
+<!--    </tbody>-->
+<!--  </table>-->
+
+  <%= link_to 'New booking', new_booking_path %>
+  <%= link_to 'Back', root_path %>
+
+  <% else %>
+    <h2> You need to be signed in to see bookings</h2>
+    <%= link_to 'Sign in', new_user_session_path %>
+  <% end %>

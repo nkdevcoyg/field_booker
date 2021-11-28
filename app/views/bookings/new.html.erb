@@ -1,0 +1,11 @@
+ <% if user_signed_in? %>
+  <h1> New booking</h1>
+
+  <% render 'form', booking: @booking %>
+
+  <% link_to 'Back', booking_path %>
+
+  <% else %>
+     <h1> You need to log in to see bookings</h1>
+    <%= link_to 'Sign in', new_user_session_path %>
+  <% end %>
