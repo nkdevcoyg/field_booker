@@ -12,21 +12,22 @@
       <li class="nav-item">
         <%= link_to "Fields", fields_path, class: "nav-link" %>
       </li>
-
+      <% if current_user && current_user.admin %>
       <li class="nav-item">
         <%= link_to 'Bookings', bookings_path, class: "nav-link" %>
       </li>
+      <% end %>
 
       <li class="nav-item">
         <%= link_to 'New Booking', new_booking_path, class: "nav-link" %>
       </li>
 
 
-      <%# if current_user && current_user.admin? %>
+      <% if current_user && current_user.admin %>
       <li class="nav-item">
         <%= link_to "Admin Fields", admin_fields_path, class: "nav-link" %>
       </li>
-      <%# end %>
+      <% end %>
 
       <% if user_signed_in? %>
 

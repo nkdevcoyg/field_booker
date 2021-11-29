@@ -1,16 +1,36 @@
-<%#= form_for([@user, @booking]) do |f| %>
-<%= form_with(model: [:user, booking], local: true) do |form| %>
-  <p>
-    <%= f.label 'start_time', 'Start time' %>
-    <%= f.datetime_select :starts %>
-  </p>
-  <p>
-    <%= f.label 'end_time', 'End time' %>
-    <%= f.datetime_select :ends %>
-  </p>
-  <p>
-    <%= f.label 'length', 'Length of booking in hours' %>
-    <%= f.number_field 'length', min: 1 %>
-  </p>
-  <%= f.submit 'Submit' %>
+<%= form_with model: booking do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+    <% booking.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :price %><br>
+    <%= form.text_field :price %><br>
+    <% booking.errors.full_messages_for(:price).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :booking_date %><br>
+    <%= form.text_area :booking_date %><br>
+    <% booking.errors.full_messages_for(:booking_date).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :end_date %><br>
+    <%= form.text_area :end_date %><br>
+    <% booking.errors.full_messages_for(:end_date).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
 <% end %>
