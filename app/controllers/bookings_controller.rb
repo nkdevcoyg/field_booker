@@ -28,6 +28,10 @@ class BookingsController < ApplicationController
           found = true
         end
       end
+      if @date_start < Time.now
+        found = true
+      end
+        flash[:alert] = "Field cant be booked in the past"
     end
     if found == true
       redirect_to new_booking_path, notice: "This field is already booked"

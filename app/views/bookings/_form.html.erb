@@ -1,19 +1,4 @@
 <%= form_with model:booking do |form| %>
-  <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-    <% booking.errors.full_messages_for(:title).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form.label :price %><br>
-    <%= form.text_field :price %><br>
-    <% booking.errors.full_messages_for(:price).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
 
   <div>
     <%= form.label :booking_date %><br>
