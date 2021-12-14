@@ -31,7 +31,7 @@ class FieldsController < ApplicationController
 
     if @field.update(field_params)
       redirect_to
-      0
+     
     else
       render :edit
     end
