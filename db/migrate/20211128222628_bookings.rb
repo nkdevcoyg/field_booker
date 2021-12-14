@@ -3,8 +3,8 @@ class Bookings < ActiveRecord::Migration[6.1]
     create_table :bookings do |t|
       t.string :title
       t.integer :price
-      t.datetime :booking_date
-      t.datetime :end_date
+      t.string :booking_date
+      t.string :end_date
 
 
       t.timestamps

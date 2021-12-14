@@ -33,7 +33,7 @@ class Admin::FieldsController < ApplicationController
 
     if @field.update(field_params)
       redirect_to
-      0
+
     else
       render :edit
     end
@@ -58,6 +58,6 @@ class Admin::FieldsController < ApplicationController
   end
 
   def field_params
-    params.require(:field).permit(:title, :location, :price, :duration, :size, :field_coverage)
+    params.require(:field).permit(:title, :location, :price, :duration, :size, :field_coverage, :user_id, :schedule_id)
   end
 end
