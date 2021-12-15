@@ -1,2 +1,0 @@
-class BookedFieldsController < ApplicationController
-end

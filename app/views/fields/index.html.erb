@@ -1,0 +1,10 @@
+<h1>Choose a field</h1>
+<ul>
+  <% @fields.each do |field| %>
+    <li>
+      <%= link_to field.title, field %>
+    </li>
+  <% end %>
+</ul>
+
+

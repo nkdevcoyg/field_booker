@@ -1,4 +1,25 @@
 Rails.application.routes.draw do
+  root to: 'pages#home'
+  get 'pages/index'
+
+  namespace :admin do
+    resources :fields, :bookings, :users
+  end
+
   devise_for :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  get "field/index" => "fields#index"
+  resources :fields, only: [:index, :show]
+
+
+  get "booking/index" => "bookings#index"
+  post '/booking/create' => 'booker#create'
+  resources :bookings
+
+
+  resources :fields do
+    resources :bookings
+  end
+
 end
+

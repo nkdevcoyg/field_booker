@@ -7,6 +7,7 @@ class CreateFields < ActiveRecord::Migration[6.1]
       t.string :size
       t.string :field_coverage
 
+
       t.timestamps
     end
   end

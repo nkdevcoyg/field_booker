@@ -10,7 +10,6 @@ class User < ApplicationRecord
   validates :phone_number, numericality: true
   validates :encrypted_password, length: { in: 6..20 }
   validates :first_name, :last_name, :phone_number, :encrypted_password, presence: true
-  validates :email, allow_blank: true
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

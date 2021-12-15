@@ -1,4 +1,6 @@
-class FieldsController < ApplicationController
+class Admin::FieldsController < ApplicationController
+  before_action :set_field, only: [:show, :edit, :update, :destroy]
+  before_action :check_if_admin
 
   def index
     @fields = Field.all
@@ -31,7 +33,7 @@ class FieldsController < ApplicationController
 
     if @field.update(field_params)
       redirect_to
-     
+
     else
       render :edit
     end
@@ -56,7 +58,6 @@ class FieldsController < ApplicationController
   end
 
   def field_params
-    params.require(:field).permit(:title, :location, :price, :size, :field_coverage, :field_id)
+    params.require(:field).permit(:title, :location, :price, :duration, :size, :field_coverage, :user_id, :schedule_id)
   end
 end
-

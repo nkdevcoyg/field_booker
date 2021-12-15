@@ -1,0 +1,18 @@
+<h1><%= @booking.title %></h1>
+
+<p> Title:  <%= @booking.title %></p>
+<p> Price:  <%= @booking.price %></p>
+<p> Date:  <%= @booking.booking_date %></p>
+<p> End Date: <%= @booking.end_date %></p>
+<p> User: <%= @booking.user_id%></p>
+<p> Field: <%= @booking.field_id%></p>
+
+<ul>
+  <% if current_user && current_user.admin %>
+    <li><%= link_to "Destroy", admin_booking_path(@booking),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %></li>
+
+  <% end %>
+</ul>
+<%= link_to 'Back', admin_bookings_path %>

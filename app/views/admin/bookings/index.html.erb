@@ -1,0 +1,25 @@
+<h1>Bookings</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th></th>
+    <th>Title</th>
+    <th>Price</th>
+    <th>User</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @bookings.each do |booking| %>
+    <tr>
+      <td><%= booking.title %> | </td>
+      <td><%= booking.price %> | </td>
+      <td><%= booking.user_id %> | </td>
+      <td><%= link_to 'Show', admin_booking_path(booking) %></td>
+      <td><%= link_to 'Destroy', admin_booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

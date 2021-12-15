@@ -1,0 +1,13 @@
+<h1><%= @field.title %></h1>0
+
+<p><%= "Location: "%><%= @field.location %></p>
+<p><%= "Price: " %><%= number_to_currency(@field.price/100) %></p>
+
+<p><%= "Size: " %><%= @field.size %></p>
+<p><%= "Field coverage: " %><%= @field.field_coverage %></p>
+
+<%= link_to 'Back', fields_path %>
+<button>
+  <%= link_to "Book field", new_field_booking_path(@field) %>
+</button>
+

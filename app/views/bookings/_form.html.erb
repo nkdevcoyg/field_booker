@@ -1,0 +1,23 @@
+<%= form_with model:booking do |form| %>
+
+  <div>
+    <%= form.label :booking_date %><br>
+    <%= form.datetime_select :booking_date %><br>
+    <% booking.errors.full_messages_for(:booking_date).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :end_date %><br>
+    <%= form.datetime_select :end_date %><br>
+    <% booking.errors.full_messages_for(:end_date).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <%= form.hidden_field :field_id, value: params[:field_id]%>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
